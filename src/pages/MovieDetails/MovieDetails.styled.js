@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100%;
   padding-top: 15px;
   display: flex;
   flex-direction: column;
@@ -22,10 +23,9 @@ export const StyledLinkBtn = styled(Link)`
 export const AddInfo = styled.div`
   padding-left: 20px;
   padding-right: 20px;
-  width: 100vw;
 `;
 
 export const Title = styled.h2`
   font-size: 20px;
-  font-weight: 500px;
+  font-weight: 500;
 `;

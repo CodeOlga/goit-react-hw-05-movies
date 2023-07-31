@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   gap: 20px;
   border-bottom: 1px solid #6e6e6e;
-  padding-left: 20px;
-  padding-right: 20px;
 `;
 
 export const Image = styled.img`
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
 `;
-export const DescMovie = styled.div``;
+export const DescMovie = styled.div`
+  max-width: 600px;
+  padding-left: 20px;
+  padding-right: 40px;
+`;
 
 export const Title = styled.h2``;
 

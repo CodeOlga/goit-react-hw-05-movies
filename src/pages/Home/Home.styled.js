@@ -18,6 +18,7 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   opacity: 0.3;
   z-index: -1;
+  filter: blur(1px);
 `;
 
 export const Title = styled.h2`
