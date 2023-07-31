@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const StyledLinkBtn = styled(Link)`
   margin-left: 15px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border: 1px solid #808080;
   border-radius: 5px;
   color: #000000;
