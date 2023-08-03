@@ -1,6 +1,7 @@
 import MovieCard from 'components/MovieCard/MovieCard';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { RotatingLines } from 'react-loader-spinner';
 
 import { getMovieDetails } from 'services/moviesAPI';
 
@@ -9,6 +10,7 @@ import {
   Container,
   StyledLinkBtn,
   Title,
+  Loader
 
 } from './MovieDetails.styled';
 import {
@@ -22,15 +24,19 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
   const { movieId } = useParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovieDetails = async movieId => {
       try {
+        setLoading(true);
         const movieDetails = await getMovieDetails(movieId);
         setMovieDetails(movieDetails);
       } catch (error) {
         console.log(error.message);
-      } 
+      } finally {
+          setLoading(false);
+      }
     };
     fetchMovieDetails(movieId);
   }, [movieId]);
@@ -40,7 +46,21 @@ const MovieDetails = () => {
       <StyledLinkBtn to={backLinkLocationRef.current}>
         &larr; Go back
       </StyledLinkBtn>
-      <MovieCard movieDetails={movieDetails} />
+
+      {loading ? (
+        <Loader>
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          />
+        </Loader>
+      ) : (
+        <MovieCard movieDetails={movieDetails} />
+      )}
+      
       <AddInfo>
         <Title>Additional information</Title>
         <List>

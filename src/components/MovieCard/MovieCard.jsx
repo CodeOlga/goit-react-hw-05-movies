@@ -11,20 +11,16 @@ import {
 const MovieCard = ({ movieDetails }) => {
 
   const { poster_path, title, vote_average, overview, genres, name } = movieDetails;
-
+  
   const getGenres = () => {
     return genres?.map(({ name }) => name).join(' ');
   };
   const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700'
   const userScore = Math.round((vote_average * 100) / 10);
-  
-    if (!poster_path) {
-    return null; 
-  }
 
   return (
     movieDetails &&
-      <Container>
+    <Container>
         <Image src={
           poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}`
           : defaultImg
@@ -38,9 +34,9 @@ const MovieCard = ({ movieDetails }) => {
           <DescSubtitle>Overview</DescSubtitle>
           <DescText>{overview}</DescText>
           <DescSubtitle>Genres</DescSubtitle>
-          <DescText>{getGenres()}</DescText>         
+          <DescText>{getGenres()}</DescText>
         </DescMovie>
-      </Container>
+    </Container>
   )
 }
 
