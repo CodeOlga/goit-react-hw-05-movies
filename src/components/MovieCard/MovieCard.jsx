@@ -17,6 +17,10 @@ const MovieCard = ({ movieDetails }) => {
   };
   const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700'
   const userScore = Math.round((vote_average * 100) / 10);
+  
+    if (!poster_path) {
+    return null; 
+  }
 
   return (
     movieDetails &&
