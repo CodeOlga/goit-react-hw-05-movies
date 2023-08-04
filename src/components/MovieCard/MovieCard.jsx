@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+
 import {
   Container,
   DescMovie,
@@ -6,6 +8,7 @@ import {
   DescText,
   Image,
   Title,
+  ImgWrap
 } from './MovieCard.styled';
 
 const MovieCard = ({ movieDetails }) => {
@@ -17,17 +20,26 @@ const MovieCard = ({ movieDetails }) => {
   };
   const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700'
   const userScore = Math.round((vote_average * 100) / 10);
+  const [loading, setLoading] = useState(true);
 
+    const handleImageLoadError = () => {
+    setLoading(false); // Image loaded successfully or error loading image
+  };
   return (
     movieDetails &&
     <Container>
-        <Image src={
-          poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-          : defaultImg
-          }
-          width={500}
-          alt="poster"
-        />
+
+        <ImgWrap>
+          <Image
+            src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : defaultImg}
+            width={500}
+            alt="poster"
+            onLoad={handleImageLoadError}
+            onError={handleImageLoadError}
+            style={{ display: loading ? 'none' : 'block' }}
+          />
+        </ImgWrap>
+        
         <DescMovie>
           <Title>{title || name}</Title>
           <DescText> User Score: {userScore}</DescText>

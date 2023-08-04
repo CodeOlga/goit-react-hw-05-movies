@@ -21,3 +21,7 @@ export const Title = styled.h2``;
 export const DescText = styled.p``;
 
 export const DescSubtitle = styled.h3``;
+
+export const ImgWrap = styled.div`
+  width: 500px;
+`;

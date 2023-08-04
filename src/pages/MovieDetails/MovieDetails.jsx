@@ -11,7 +11,6 @@ import {
   StyledLinkBtn,
   Title,
   Loader
-
 } from './MovieDetails.styled';
 import {
   List,
@@ -35,7 +34,7 @@ const MovieDetails = () => {
       } catch (error) {
         console.log(error.message);
       } finally {
-          setLoading(false);
+        setLoading(false);
       }
     };
     fetchMovieDetails(movieId);
@@ -60,7 +59,7 @@ const MovieDetails = () => {
       ) : (
         <MovieCard movieDetails={movieDetails} />
       )}
-      
+
       <AddInfo>
         <Title>Additional information</Title>
         <List>
