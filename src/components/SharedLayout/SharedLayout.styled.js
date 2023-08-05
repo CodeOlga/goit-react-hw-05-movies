@@ -21,6 +21,10 @@ export const StyledNavLink = styled(NavLink)`
   &.active {
     color: #810103;
   }
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
   text-decoration: none;
 `;
 

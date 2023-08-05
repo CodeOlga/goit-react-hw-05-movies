@@ -14,4 +14,8 @@ export const ListItem = styled.li`
 export const StyledLink = styled(Link)`
   font-size: 20px;
   color: #211f1f;
+  transition: background-color 0.3s ease;
+  &:hover {
+    color: #810103;
+  }
 `;

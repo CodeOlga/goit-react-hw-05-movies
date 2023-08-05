@@ -5,11 +5,23 @@ export const Container = styled.div`
   display: flex;
   gap: 20px;
   border-bottom: 1px solid #6e6e6e;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const ImgWrap = styled.div`
+  margin: 20px;
+  max-width: 500px;
 `;
 
 export const Image = styled.img`
-  margin: 20px;
+  @media screen and (max-width: 768px) {
+    width: 300px;
+  }
 `;
+
 export const DescMovie = styled.div`
   max-width: 600px;
   padding-left: 20px;
@@ -21,7 +33,3 @@ export const Title = styled.h2``;
 export const DescText = styled.p``;
 
 export const DescSubtitle = styled.h3``;
-
-export const ImgWrap = styled.div`
-  width: 500px;
-`;

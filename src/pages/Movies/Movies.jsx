@@ -53,7 +53,7 @@ const Movies = () => {
 
   return (
     <Container>
-      <SearchForm onSubmit={handleSubmit}>
+      <SearchForm autoComplete="off" onSubmit={handleSubmit}>
         <SearchInput
           type="text"
           name="search"

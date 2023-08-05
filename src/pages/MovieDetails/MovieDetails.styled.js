@@ -18,11 +18,15 @@ export const StyledLinkBtn = styled(Link)`
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    background-color: #810103;
+  }
 `;
 
 export const AddInfo = styled.div`
   padding-left: 20px;
-  padding-right: 20px;
 `;
 
 export const Title = styled.h2`

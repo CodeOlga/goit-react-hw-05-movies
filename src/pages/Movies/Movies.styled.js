@@ -21,6 +21,11 @@ export const SearchBtn = styled.button`
   border-radius: 3px;
   font-size: 16px;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    background-color: #810103;
+  }
 `;
 
 export const Loader = styled.div`
